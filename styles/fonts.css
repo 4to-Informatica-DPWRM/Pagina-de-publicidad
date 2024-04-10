@@ -1,0 +1,23 @@
+@font-face {
+    font-family: Determination;
+    src: url('/fonts/determinationmonoweb-webfont.ttf');
+}
+
+@font-face {
+    font-family: UDLog;
+    src: url('/fonts/undertale-font-lowercase-b.ttf');
+}
+
+* {
+    font-family: Determination;
+    background-color: black;
+    color: white;
+}
+
+body {
+    margin: 0 0 0 0;
+}
+
+p {
+    font-size: 23px;
+}

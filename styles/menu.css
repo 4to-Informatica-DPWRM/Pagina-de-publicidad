@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    width: 100vw;
+    padding-right: 10px;
+    border-bottom: 2px white solid;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    font-size: 75px;
+}
+
+#menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#optinicio {
+    display: none;
+}
