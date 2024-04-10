@@ -2,7 +2,7 @@ header {
     display: flex;
     justify-content: space-between;
     height: 150px;
-    width: 100vw;
+    width: 99%;
     padding-right: 10px;
     border-bottom: 2px white solid;
 }
@@ -17,6 +17,10 @@ header {
     display: flex;
     gap: 20px;
     align-items: center;
+}
+
+#menu p:hover {
+    color: yellow;
 }
 
 #optinicio {
