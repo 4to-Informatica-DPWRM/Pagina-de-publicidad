@@ -23,40 +23,62 @@ body{
     perspective: 1000px;
 }
 
-.flip-card-front,
+.flip-card-front{
+    width: 380px;
+    min-height: 600px;
+    height: auto;
+    background-color: rgb(6, 6, 6);
+    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+    background-size: cover;
+    background-position: center;  
+    text-align: center;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: transform 2.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
 .flip-card-back{
   width: 380px;
   min-height: 600px;
   height: auto;
-  background-color: aqua;
-  background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+  background-color: rgb(6, 6, 6);
+  background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);
+
   background-size: cover;
   background-position: center;  
   text-align: center;
   backface-visibility: hidden;
   transform-style: preserve-3d;
-  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform 2.8s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
-.flip-card:nth-of-type(2) .flip-card-front,
+
+
+.flip-card:nth-of-type(2) .flip-card-front{
+    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+}
+
 .flip-card:nth-of-type(2) .flip-card-back{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZAFNOJFekZP83OsukP875vxC83BJwbyyYwp7rZHTWCbOJ5J_sTxScNxb3K7NfLdnW85U&usqp=CAU);
+    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);
 }
 
-.flip-card:nth-of-type(3) .flip-card-front,
+.flip-card:nth-of-type(3) .flip-card-front{
+    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+}
+
 .flip-card:nth-of-type(3) .flip-card-back{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZAFNOJFekZP83OsukP875vxC83BJwbyyYwp7rZHTWCbOJ5J_sTxScNxb3K7NfLdnW85U&usqp=CAU);
+    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);
 }
 
 .flip-card-front{
-    transform: rotateY('0deg');
+    transform: rotateY(0deg);
 }
 
 .flip-card-back{
     position: absolute;
     top: 0;
     left: 0;
-    transform: rotateY('180deg');
+    transform: rotateY(180deg);
 }
 
 .flip-card-front::after,
@@ -64,7 +86,7 @@ body{
     content: "";
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: rgba(23, 23, 23, 0.677);
     position: absolute;
     top: 0;
     left: 0;
@@ -82,32 +104,33 @@ body{
 }
 
 .inner .icon{
-    width: 80px;
-    margin-bottom: 20px;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 15px;
 }
 
 .inner h3{
     margin-bottom: 8px;
-    color: aquamarine;
-    font-size: 30px;
+    color: rgb(166, 220, 253);
+    font-size: 50px;
     font-weight: 700;
     line-height: 40px;
     text-transform: capitalize;
 }
 
 .inner p{
-    color: black;
+    color: white;
     font-size: 16px;
     line-height: 28px;
 }
 
 
 .flip-card:hover .flip-card-front{
-    transform: rotateY('-180deg');
+    transform: rotateY(-180deg);
 }
 
 .flip-card:hover .flip-card-back{
-    transform: rotateY('0deg')
+    transform: rotateY(0deg)
 }
 
 
