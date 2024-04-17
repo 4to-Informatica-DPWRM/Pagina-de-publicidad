@@ -5,6 +5,12 @@ header {
     width: 99%;
     padding-right: 10px;
     border-bottom: 2px white solid;
+    user-select: none;
+}
+
+header p:hover {
+    color: yellow;
+    cursor: pointer;
 }
 
 .logo {
@@ -19,10 +25,19 @@ header {
     align-items: center;
 }
 
-#menu p:hover {
-    color: yellow;
+.menuopts {
+    width: max-content;
+    height: 30px;
+}
+
+.opciones {
+    display: none;
+    position: absolute;
+    border: 2px white solid;
+    border-radius: 5%;
+    padding: 0 4px 0 4px;
 }
 
 #optinicio {
-    display: none;
+    top: 12%;
 }
