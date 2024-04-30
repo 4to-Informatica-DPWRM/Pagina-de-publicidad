@@ -6,6 +6,7 @@ header {
     padding-right: 10px;
     border-bottom: 2px white solid;
     user-select: none;
+    background-color: black;
 }
 
 header p:hover {
