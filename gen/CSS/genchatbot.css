@@ -1,0 +1,14 @@
+#chatbot {
+    display: flex;
+    justify-content: right;
+}
+
+#chat {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: red;
+    position: fixed;
+    top: 91.5%;
+    right: 0.3%;
+}
