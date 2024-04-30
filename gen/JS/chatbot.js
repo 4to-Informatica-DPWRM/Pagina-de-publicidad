@@ -37,7 +37,7 @@ if (username.length > 35) {
 
 //#*    [ MENSAJES ]    */
 
-const bot = `<div class="bot-response animation"><span class="bot-name">Robó</span><p class='agregado'><i class="fa-solid fa-robot icon"></i>></i>`
+const bot = `<div class="bot-response animation"><span class="bot-name">Mettaton</span><p class='agregado'><i class="fa-solid fa-robot icon"></i>></i>`
 const finbot =  `</p></div>`
 const user = `<div class="user-response animation"><span class="username">${username}</span><p class='agregado'>`
 const finuser = ` < <i class="fa-regular fa-circle-user user-icon"></i></p></div>`
