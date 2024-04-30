@@ -3,12 +3,26 @@
     justify-content: right;
 }
 
+#WARNING {
+    position: fixed;
+    scale: 1.8;
+    filter: brightness(2);
+}
+
 #chat {
     height: 60px;
     width: 60px;
-    border-radius: 50%;
-    background-color: red;
+    background-image: url("/assets/img/MethatonButton.png");
     position: fixed;
     top: 91.5%;
     right: 0.3%;
+    filter: brightness(0.7);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chat:hover {
+    filter: brightness(1)
 }
