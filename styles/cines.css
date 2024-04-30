@@ -1,0 +1,11 @@
+*{
+    background-color: black;
+    color: aliceblue;
+    box-sizing: border-box;
+    padding: 0%;
+}
+footer{
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: none;
+}
