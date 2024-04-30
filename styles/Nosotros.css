@@ -16,27 +16,30 @@ body {
     flex-wrap: wrap;
 }
 
+/* Estilos para el contenedor de la tarjeta */
 .flip-card{
     margin: 20px;
     position: relative;
-    transform-style: preserve-3d;
+    transform-style: preserve-3d; /*efecto 3d*/
     perspective: 1000px;
 }
 
+/* Estilos para la cara frontal de la tarjeta */
 .flip-card-front{
     width: 380px;
     min-height: 600px;
     height: auto;
     background-color: rgb(6, 6, 6);
-    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+    background-image: url(https://spasdeargentina.com.ar/wp-content/uploads/elementor/thumbs/Vision-oyug2lxu9651doghw0he5drsc13m11phdhx9s58uxa.jpg);
     background-size: cover;
     background-position: center;  
     text-align: center;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transition: transform 2.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    backface-visibility: hidden; /*oculta la parte de atras de la tarjeta*/
+    transform-style: preserve-3d; /*efecto 3d*/
+    transition: transform 2.8s cubic-bezier(0.4, 0.2, 0.2, 1); /*transicion*/
 }
 
+/* estilo de la parte de atras de la tarjeta*/
 .flip-card-back{
   width: 380px;
   min-height: 600px;
@@ -47,27 +50,28 @@ body {
   background-size: cover;
   background-position: center;  
   text-align: center;
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* oculta la parte de alante*/
   transform-style: preserve-3d;
   transition: transform 2.8s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
 
-
+/*estilo de la segunda tarjeta*/
 .flip-card:nth-of-type(2) .flip-card-front{
-    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+    background-image: url(https://i.pinimg.com/564x/1e/f1/77/1ef1770ce55c931d9a29d702f9f85e1e.jpg);/*imagen de fondo alante*/
 }
 
 .flip-card:nth-of-type(2) .flip-card-back{
-    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);
+    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);/*imagen de fondo de atras*/
 }
 
+/*estilo de la tercera tarjeta*/
 .flip-card:nth-of-type(3) .flip-card-front{
-    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+    background-image: url(https://i.pinimg.com/564x/7f/82/f5/7f82f50915fe46d9979a960da40895ba.jpg);/* imagen de fondo alante*/
 }
 
 .flip-card:nth-of-type(3) .flip-card-back{
-    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);
+    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);/*imagen de fondo de atras*/
 }
 
 .flip-card-front{
@@ -92,7 +96,7 @@ body {
     left: 0;
     opacity: 0.6;
 }
-
+/* contenido dentro de la tarjeta*/
 .flip-card-front .inner,
 .flip-card-back .inner{
     width: 100%;
@@ -124,13 +128,13 @@ body {
     line-height: 28px;
 }
 
-
+/*efecto para voltear la tarjeta a pasar el mouse*/
 .flip-card:hover .flip-card-front{
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg);/*voltea hacia atras*/
 }
 
 .flip-card:hover .flip-card-back{
-    transform: rotateY(0deg)
+    transform: rotateY(0deg)/*voltea hacia alante*/
 }
 
 
