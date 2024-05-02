@@ -1,10 +1,14 @@
 :root {
     --poscenter: 49%;
     --nonemenu: 26%;
-    --undynebodyleft: 34%;
-    --undynebodytop: 110%;
-    --mettatonbodytop: 160%; 
-    --mettatonbodyleft: 31%;
+    --ordercharactersleft: 34%;
+    --ordercharacterstop: 110%;
+    --undynebodytop: var(--ordercharacterstop);
+    --undynebodyleft: var(--ordercharactersleft);
+    --mettatonbodytop: calc(var(--ordercharacterstop) + (50%)); 
+    --mettatonbodyleft: calc(var(--ordercharactersleft) - (3%));
+    --alphysbodyleft: calc(var(--ordercharactersleft) - (4%));
+    --alphysbodytop: calc(var(--ordercharacterstop) + (113%));
 }
 
 body {
@@ -49,6 +53,7 @@ button {
     border: 2px black solid;
     border-radius: 5px;
     animation: showdialog 0.6s;
+    pointer-events: none;
 }
 
 /*_*    [ UNDYNE ] */
@@ -77,12 +82,24 @@ button {
 
 #mettatonarms {
     top: calc(var(--mettatonbodytop) - (10%));
-    left: calc(var(--mettatonbodyleft) - (1.2%));
+    left: calc(var(--mettatonbodyleft) - (1.5%));
 }
 
 #mettatontext {
     top: calc(var(--mettatonbodytop) - (17%));
     left: calc(var(--mettatonbodyleft) - (30%));
+}
+
+/*_* [ ALPHYS ] */
+
+#alphys {
+    top: var(--alphysbodytop);
+    left: var(--alphysbodyleft);
+}
+
+#alphystext {
+    top: calc(var(--alphysbodytop) - (26%));
+    left: calc(var(--alphysbodyleft) - (26%));
 }
 
 /* PRUEBAS */

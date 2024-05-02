@@ -2,6 +2,7 @@
 
 const documento = document.documentElement;
 const documentostyle = window.getComputedStyle(documento);
+var numran
 
 document.addEventListener('DOMContentLoaded', function() {
     const menu = `<header>
@@ -44,13 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <a target="_black" href="https://www.conectate.com.do/loterias/"><p class="menuopts" id="4m">Loteria</p></a>
             <a target="_black" href="/HTML/Cines.html"><p class="menuopts" id="5m">Cine</p></a>
-            <a target="_black" href="/HTML/ofertas.html"><p class="menuopts" id="6m">Mercancia</p></a>
+            <a target="_black" href="/HTML/ofertas.html"><p class="menuopts" id="6m">Ofertas</p></a>
             <p class="menuopts" id="7m">Nosotros</p>
         </div>
     </header>
     
     <audio id="selectmenu" src="/assets/sounds/snd_select.wav"></audio>
-    <audio src="/assets/sounds/texts/SND_TXT1.wav"></audio>`;
+    <audio src="/assets/sounds/texts/SND_TXT1.wav"></audio>
+    <img src="/assets/img/flowey/map/spr_floweyshrink_8.png" alt="miniflowey" id="miniflowey" class="scale2s5 character">
+    <textarea name="minifloweytextdialog" id="minifloweytext" class="dialog character" cols="30" rows="10"></textarea>`;
 
     var Elemento = document.querySelector('header');
 
@@ -78,6 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectsound = document.querySelector('#selectmenu');
     const pmenus = document.querySelectorAll('header p');
     const h1menu = document.querySelector('header h1');
+    const floweymini = document.getElementById('miniflowey');
+    const floweyresponses = [
+        'Hola, te voy a acompañar a todos lados!',
+        'Interesante, no?',
+        'Sabias que a la derecha esta mettaton? el robot ase- digo, el robot que te puede ayudar con tus dudas'
+    ]
+    const floweyminitext = document.getElementById('minifloweytext');
 
     selectsound.volume = 0.4;
 
@@ -86,11 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
     //? Mostrar u Ocultar el objeto insertado en el parametro
     function mostraruocultar(objeto) {
         
-        if (objeto.style.display == 'none') {
-            objeto.style.display = 'block';
+        if (objeto.style.display == 'block') {
+            objeto.style.display = 'none';
         }
         else {
-            objeto.style.display = 'none';
+            objeto.style.display = 'block';
         };
     };
 
@@ -145,5 +155,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     h1menu.addEventListener('mouseover', function() {
         soundselect()
+    })
+
+    window.addEventListener('scroll', function() {
+        actscrollY = window.scrollY
+    
+        if (actscrollY >= 380) {
+          floweymini.style.display = 'block';  
+        }
+        else {
+            floweymini.style.display = 'none';
+        }
+    })
+
+    floweymini.addEventListener('mouseover', function() {
+        
+        numran = Math.floor(Math.random() * ((floweyresponses.length - 1) - 0 + 1) + 0)
+        floweyminitext.value = floweyresponses[numran]
+        mostraruocultar(floweyminitext)
+    })
+
+    floweymini.addEventListener('mouseout', function() {
+        
+        mostraruocultar(floweyminitext)
     })
 })

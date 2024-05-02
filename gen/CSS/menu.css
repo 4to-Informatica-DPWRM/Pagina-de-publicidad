@@ -44,6 +44,7 @@ header h1 {
     gap: 20px;
     align-items: center;
     z-index: 1000;
+    width: 760px;
 }
 
 .menuopts {
@@ -68,6 +69,34 @@ header h1 {
 
 #actmenu {
     display: none;
+}
+
+#miniflowey {
+    display: none;
+    position: fixed ;
+    top: 95.5%;
+    left: 1%;
+    animation: upflowey 0.5s;
+}
+
+#minifloweytext {
+    display: none;
+    position: fixed;
+    width: 400px;
+    height: 50px;
+    top: 85%;
+    left: 1%;
+    overflow-y: hidden;
+    z-index: 1001;
+}
+
+@keyframes upflowey {
+    from {
+        top: 110%;
+    }
+    to {
+        top: 95.5%;
+    }
 }
 
 @media (max-width: 1140px) {
