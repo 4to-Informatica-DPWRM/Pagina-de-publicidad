@@ -3,18 +3,18 @@
     justify-content: right;
 }
 
-#WARNING {
+.WARNING {
+    z-index: 999;
     position: fixed;
-    scale: 1.8;
-    filter: brightness(2);
+    scale: 2;
 }
 
 #chat {
-    height: 60px;
-    width: 60px;
-    background-image: url("/assets/img/MethatonButton.png");
+    height: 64px;
+    width: 64px;
+    background-image: url("/assets/img/MethatonButton2.png");
     position: fixed;
-    top: 91.5%;
+    top: 91%;
     right: 0.3%;
     filter: brightness(0.7);
     cursor: pointer;

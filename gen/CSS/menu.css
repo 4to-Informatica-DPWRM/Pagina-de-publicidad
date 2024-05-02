@@ -1,14 +1,19 @@
+body {
+    overflow-x: hidden;
+}
+
 header {
     display: flex;
     justify-content: space-between;
-    width: 99%;
-    padding-right: 10px;
+    width: 100vw;
     border-bottom: 2px white solid;
     user-select: none;
     background-color: black;
+    
 }
 
-header p:hover {
+header p:hover,
+header h1:hover {
     color: yellow;
     cursor: pointer;
 }
@@ -24,6 +29,14 @@ header a {
 
 .logo {
     width: 100px;
+}
+
+#logoempress {
+    display: flex;
+}
+
+header h1 {
+    align-self: center;
 }
 
 #menu {
@@ -43,8 +56,8 @@ header a {
     position: absolute;
     border: 2px white solid;
     border-radius: 5%;
-    padding: 0 4px 0 4px;
-    top: 9%;
+    padding: 0 4px 0 4px !important;
+    top: 8.8%;
     background-color: black;
 }
 
@@ -57,9 +70,9 @@ header a {
     display: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1140px) {
     header {
-        width: 98%;
+        width: 100%;
     }
     #menu {
         flex-direction: column;

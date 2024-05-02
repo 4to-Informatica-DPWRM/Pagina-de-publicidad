@@ -24,7 +24,6 @@
     display: none;
     color: red;
     font-size: 20px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600px;
     scale: 0.7;
     width: 43%;
@@ -39,6 +38,7 @@
     border: white 2px solid;
     border-radius: 2%;
     z-index: 100000;
+    animation: showchat 0.55s;
 }
 
 #botones {
@@ -90,7 +90,26 @@
     width: 14.2vw;
 }
 
+/*#* ANIMACIONES */
+
+@keyframes showchat {
+    from {
+        pointer-events: none;
+        scale: 0;
+        top: 100%;
+        left: 80%
+    }
+    to {
+        pointer-events: all;
+        scale: 0.7;
+        left: 63%;
+        top: 5%;
+    }
+}
+
 /*#* INICIO BOTON DE CLEAR */
+
+/*#* REPONSIVE */
 
 @media (max-width: 500px) {
     .chatbot {

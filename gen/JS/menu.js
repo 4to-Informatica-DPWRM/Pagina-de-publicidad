@@ -1,24 +1,30 @@
 //#*    [ VARIABLES ]
 
 const documento = document.documentElement;
-const documentostyle = window.getComputedStyle(document.documentElement);
+const documentostyle = window.getComputedStyle(documento);
 
 document.addEventListener('DOMContentLoaded', function() {
     const menu = `<header>
-        <a href="/index.html"><img src="/assets/img/valores.webp" alt="Logo" class="logo"></a>
 
-        <button id="actmenu">M</button>
+        <a href="/index.html">
+            <div id="logoempress">
+                <img src="/assets/img/valores.webp" alt="Logo" class="logo">
+                <h1>Dominican Offers</h1>
+            </div>
+        </a>
+
+        <button id="actmenu">Menu</button>
         <div id="menu">
             <div class="seccion">
-                <a href="/index.html"><p class="menuopts" id="1">Inicio</p></a>
+                <a href="/index.html"><p class="menuopts" id="1m">Inicio</p></a>
                 <div id="optinicio" class="opciones">
                     <p>Misión</p>
                     <p>Visión</p>
-                    <a href="/HTML/valores2.html"><p>Valores</p></a>
+                    <a href="/HTML/Nosotros.html"><p>Valores</p></a>
                 </div>
             </div>
             <div class="seccion">
-                <a href="/HTML/Supermerc.html"><p class="menuopts" id="2">Supermercados</p></a>
+                <a href="/HTML/Supermerc.html"><p class="menuopts" id="2m">Supermercados</p></a>
                 <div id="optsuper" class="opciones">
                     <p>Aprezio</p>
                     <p>Bravo</p>
@@ -28,20 +34,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             <div class="seccion">
-                <p class="menuopts" id="3">Farmacias</p>
+                <p class="menuopts" id="3m">Farmacias</p>
                 <div id="optfarm" class="opciones">
-                    <a href="https://farmaciasloshidalgos.com.do"><p>Los Hidalgos</p></a>
-                    <a href="https://www.farmaciacarol.com"><p>Farmacia Carol</p></a>
-                    <a href="https://farmaciamedicargbc.com/contactenos/?gclid=CjwKCAjwrcKxBhBMEiwAIVF8rJKjNy1VP61rP2eg9DvCThm4AWVbdnGSSwaCU9i2y-tmjY-I6FJooRoCE24QAvD_BwE"><p>Farmacia GBC</p></a>
-                    <a href="https://edenorte.com.do/farmax-2/"><p>Farmanax</p></a>
+                    <a target="_black" href="https://farmaciasloshidalgos.com.do"><p>Los Hidalgos</p></a>
+                    <a target="_black" href="https://www.farmaciacarol.com"><p>Farmacia Carol</p></a>
+                    <a target="_black" href="https://farmaciamedicargbc.com/contactenos/?gclid=CjwKCAjwrcKxBhBMEiwAIVF8rJKjNy1VP61rP2eg9DvCThm4AWVbdnGSSwaCU9i2y-tmjY-I6FJooRoCE24QAvD_BwE"><p>Farmacia GBC</p></a>
+                    <a target="_black" href="https://www.instagram.com/farmamaxve/?hl=es"><p>Farmanax</p></a>
                 </div>
             </div>
-            <p class="menuopts" id="4">Loteria</p>
-            <a href="/HTML/Cines.html"><p class="menuopts" id="5">Cine</p></a>
-            <a href="/HTML/ofertas.html"><p class="menuopts" id="6">Mercancia</p></a>
-            <p class="menuopts" id="7">Nosotros</p>
+            <a target="_black" href="https://www.conectate.com.do/loterias/"><p class="menuopts" id="4m">Loteria</p></a>
+            <a target="_black" href="/HTML/Cines.html"><p class="menuopts" id="5m">Cine</p></a>
+            <a target="_black" href="/HTML/ofertas.html"><p class="menuopts" id="6m">Mercancia</p></a>
+            <p class="menuopts" id="7m">Nosotros</p>
         </div>
-    </header>`;
+    </header>
+    
+    <audio id="selectmenu" src="/assets/sounds/snd_select.wav"></audio>
+    <audio src="/assets/sounds/texts/SND_TXT1.wav"></audio>`;
 
     var Elemento = document.querySelector('header');
 
@@ -66,9 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const iniciooptions = document.getElementById('optinicio');
     const opciones = document.querySelectorAll('.opciones');
     const botonformenu = document.querySelector('#actmenu');
-    const openchat = document.querySelector('#chat');
-    const chatwithbot = document.getElementsByClassName('chatbot')[0];
-    const warningobj = document.querySelectorAll('.WARNING');
+    const selectsound = document.querySelector('#selectmenu');
+    const pmenus = document.querySelectorAll('header p');
+    const h1menu = document.querySelector('header h1');
+
+    selectsound.volume = 0.4;
 
     //#*              [ FUNCIONES ]
 
@@ -91,14 +102,18 @@ document.addEventListener('DOMContentLoaded', function() {
         mostraruocultar(allmenu);
     })
 
+    function soundselect() {
+        selectsound.play()
+    }
+
     //? Añadir eventos a los 3 primeros objetos del menu, junto con sus opciones
-    for (i = 0; i <= menuhead.length-5; i++) {
+    for (var i = 0; i <= menuhead.length-5; i++) {
 
         let object = menuhead.item(i);
         let objectopt = opciones.item(i);
 
         object.addEventListener('mouseover', function() {
-            objectid = Number(event.target.id)
+            objectid = Number(String(event.target.id).substring(0, 1))
 
             opciones[objectid-1].style.display = 'block';
         });
@@ -119,9 +134,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    openchat.addEventListener('click', function() {
+    for (var i = 0; i <= pmenus.length-1; i++) {
 
-        mostraruocultar(chatwithbot)
-        warningobj[0].style.display = 'none';
+        let object = pmenus.item(i)
+
+        object.addEventListener('mouseover', function() {
+            soundselect()
+        })
+    }
+
+    h1menu.addEventListener('mouseover', function() {
+        soundselect()
     })
 })

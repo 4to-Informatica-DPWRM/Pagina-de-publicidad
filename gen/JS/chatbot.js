@@ -4,12 +4,6 @@
 
 const documentobot = window.getComputedStyle(document.documentElement)
 const documentel = document.documentElement
-const adt = document.getElementById('insertartexto')
-const enviar = document.getElementById('send')
-const actualPos = documentobot.getPropertyValue('--actualPos')
-const antPos = documentobot.getPropertyValue('--antPos')
-const prueba = document.getElementById('agregar')
-const menres = document.getElementById('mensajesfaltantes')
 
 //_*    [ VAR ]
 
@@ -85,154 +79,281 @@ const elseswitch = [
     bot + 'No entendi a lo que te referias.' + finbot
 ]
 
-var respuesta = user + texto + finuser
+function tryplaysound(audio) {
 
-prueba.innerHTML += bot + 'Bienvenido, en que puedo ayudarte?' + finbot
-
-//#*    [ FUNCIONES ]   */
-
-//_*    [ EDICION DE TEXTO ]
-
-function toCapitalize(texto) {
-    return texto[0].toUpperCase() + texto.slice(1).toLowerCase()
-}
-
-//_*    [ MENSAJES ]
-
-function holareal(objid) {
-
-    if (!(isNaN(objid))) {
-        textosi = document.getElementById(objid).textContent
-        textosi = toCapitalize(textosi)
+    try {
+        audio.play()
     }
-
-    prueba.innerHTML += user + textosi + finuser
-    mensajestot++
-
-    switch (objid){
-        case 1: 
-            numran = Math.floor(Math.random() * (holaswitch.length - 1 + 1) + 1)-1
-            prueba.innerHTML += holaswitch[numran]
-            break;
-        case 2: 
-            numran = Math.floor(Math.random() * (adiosswitch.length - 1 + 1) + 1)-1
-            prueba.innerHTML += adiosswitch[numran]
-            break;
-        case 3:
-            numran = Math.floor(Math.random() * (hruswitch.length - 1 + 1) + 1)-1
-            prueba.innerHTML += hruswitch[numran]
-            break;
-        case 4: 
-            numran = Math.floor(Math.random() * 10000)+1
-            console.log(numran)
-            if (numran == 6969 || numran == 34 || numran == 6942 || numran == 69 || numran == 6996 || numran == 666 || numran == 42 || numran == 23 || numran == 496 || numran == 1) {
-                prueba.innerHTML += bot + 'Me gusta follar perros' + finbot
-                console.log('salio!')
-                lock = true
-            }
-            else {
-                prueba.innerHTML += ostia
-            }
-
-            break;
-        default: 
-            if (texto.length == 0) {
-                prueba.innerHTML += elseswitch[10]
-            }
-            else {
-                numran = Math.floor(Math.random() * (elseswitch.length - 1 + 1) + 1)-1
-                prueba.innerHTML += elseswitch[numran]
-            }
+    catch (error) {
+        console.log('No tiene sonido', error)
     }
 }
 
-function si() {
-    texto = adt.value
-    textosi = texto
-    texto = texto.toUpperCase()
-
-    if (texto.length > 0) {
-
-        mensajeanterior = textosi
-
-        switch (true) {
-            case texto.search('HOLA') >= 0:
-                holareal(1)
-                break;
-            case texto.search('ADIOS') >= 0:
-                holareal(2)
-                break;
-            case texto.search('COMO ESTAS') >= 0:
-                holareal(3)
-                break;
-            case texto.search('OSTIA') >= 0:
-                holareal(4)
-                break;
-            default:
-                holareal();
-        }
-    }
-}
-
-function hola() {
-
-    let idboton = event.target.id
-
-    if (isNaN(Number(idboton))) {
-        idboton = idboton        
+function mostraruocultar(objeto, sound, elsesound) {
+        
+    if (objeto.style.display == 'block') {
+        objeto.style.display = 'none';
+        tryplaysound(sound)
     }
     else {
-        idboton = Number(idboton)
+        objeto.style.display = 'block';
+        tryplaysound(elsesound)
+    };
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const cargarbot = `<section id="chatbot">
+    <div id="chat">
+        
+    </div>
+
+    <article class="chatbot" id="cuerpo">
+        <div class="text">
+        
+            <div id="agregar">
+        
+            </div>
+        
+        </div>
+        
+        <div id="botones">
+            <button type="button" id="1" class="botones">HOLA</button>
+            <button type="button" id="3" class="botones">COMO ESTAS</button>
+            <button type="button" id="4" class="botones">OSTIA</button>
+            <button type="button" id="2" class="botones">ADIOS</button>
+            <button type="button" id="5" onclick="clearElements()" class="clear">CLEAR</button>
+        </div>
+        
+        <div class="send-cont">
+            <div class="btn-container">
+                <button class="send-button" id="send">
+                    <div class="svg-wrapper-1">
+                        <div class="svg-wrapper">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24"
+                            >
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path
+                                fill="currentColor"
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                ></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <span>Send</span>
+                </button>
+            </div>
+            <input maxlength="50" type="text" id="insertartexto"></input>
+        </div>
+        
+    </article>
+</section>
+
+<audio src="/assets/sounds/snd_sparkle1.wav" type="audio/wav" id="sparkles"></audio>
+<audio src="/assets/sounds/snd_splash.wav" type="audio/wav" id="splash"></audio>`
+
+    var Elemento = document.querySelector('#chatbot');
+
+    if (Elemento) {
+
+        //? Crea un contenedor temporal, añade el menú y luego lo inserta antes del elemento de referencia
+        let tempDiv = document.createElement('div');
+        tempDiv.innerHTML = cargarbot;
+
+        while (tempDiv.firstChild) {
+            Elemento.parentNode.insertBefore(tempDiv.firstChild, Elemento);
+        }
+    }
+    else {
+        //? Si no hay un elemento existente lo añade al inicio
+        document.body.insertAdjacentHTML('afterbegin', cargarbot);
     }
 
-    if (lock == false) {
-        if (typeof idboton == 'number') {
-            holareal(idboton)
-            detectarmensajes()
+    const adt = document.getElementById('insertartexto')
+    const enviar = document.getElementById('send')
+    const actualPos = documentobot.getPropertyValue('--actualPos')
+    const antPos = documentobot.getPropertyValue('--antPos')
+    const prueba = document.getElementById('agregar')
+    const menres = document.getElementById('mensajesfaltantes')
+    const openchat = document.querySelector('#chat');
+    const chatwithbot = document.getElementsByClassName('chatbot')[0];
+    const chatbotbuttons = document.querySelectorAll('.botones');
+    const sparklessounds = document.querySelector('#sparkles');
+    const splashsounds = document.querySelector('#splash');
+
+    var respuesta = user + texto + finuser
+
+    prueba.innerHTML += bot + 'Bienvenido, en que puedo ayudarte?' + finbot
+
+    //#*    [ FUNCIONES ]   */
+
+    //_*    [ EDICION DE TEXTO ]
+
+    function toCapitalize(texto) {
+        return texto[0].toUpperCase() + texto.slice(1).toLowerCase()
+    }
+
+    //_*    [ NUMEROS ]
+
+    function RandomInt(max, min) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function entre(num, max, min) {
+        return (num <= max) & (num >= min)
+    }
+
+    //_*    [ MENSAJES ]
+
+    function holareal(objid) {
+
+        if (!(isNaN(objid))) {
+            textosi = document.getElementById(objid).textContent
+            textosi = toCapitalize(textosi)
+        }
+
+        prueba.innerHTML += user + textosi + finuser
+        mensajestot++
+
+        switch (objid){
+            case 1: 
+                numran = RandomInt(holaswitch.length-1, 0)
+                prueba.innerHTML += holaswitch[numran]
+                break;
+            case 2: 
+                numran = RandomInt(adiosswitch.length-1, 0)
+                prueba.innerHTML += adiosswitch[numran]
+                break;
+            case 3:
+                numran = RandomInt(adiosswitch.length-1, 0)
+                prueba.innerHTML += hruswitch[numran]
+                break;
+            case 4: 
+                prueba.innerHTML += ostia
+
+                break;
+            default: 
+                if (texto.length == 0) {
+                    prueba.innerHTML += elseswitch[10]
+                }
+                else {
+                    numran = RandomInt(adiosswitch.length-1, 0)
+                    prueba.innerHTML += elseswitch[numran]
+                }
+        }
+    }
+
+    function si() {
+        texto = adt.value
+        textosi = texto
+        texto = texto.toUpperCase()
+
+        if (texto.length > 0) {
+
+            mensajeanterior = textosi
+
+            switch (true) {
+                case texto.search('HOLA') >= 0:
+                    holareal(1)
+                    break;
+                case texto.search('ADIOS') >= 0:
+                    holareal(2)
+                    break;
+                case texto.search('COMO ESTAS') >= 0:
+                    holareal(3)
+                    break;
+                case texto.search('OSTIA') >= 0:
+                    holareal(4)
+                    break;
+                default:
+                    holareal();
+            }
+        }
+    }
+
+    function hola() {
+
+        let idboton = event.target.id
+
+        if (isNaN(Number(idboton))) {
+            idboton = idboton        
         }
         else {
-            si()
+            idboton = Number(idboton)
+        }
+
+        if (lock == false) {
+            if (typeof idboton == 'number') {
+                holareal(idboton)
+                detectarmensajes()
+            }
+            else {
+                si()
+            }
         }
     }
-}
 
-function detectarmensajes() {
+    function detectarmensajes() {
 
-    if (mensajestot == 101) {
-        clearElements()
-        mensajestot = 0
-    }
-}
-
-function clearElements() {
-    
-    mensajestot = 0
-    lock = false
-    while (prueba.firstChild) {
-        prueba.removeChild(prueba.firstChild);
+        if (mensajestot == 101) {
+            clearElements()
+            mensajestot = 0
+        }
     }
 
-    if (mensajestot == 0) {
-        adt.value = ''
+    function clearElements() {
+        
+        mensajestot = 0;
+        lock = false;
+        while (prueba.firstChild) {
+            prueba.removeChild(prueba.firstChild);
+        };
+
+        if (mensajestot == 0) {
+            adt.value = '';
+        };
+    };
+
+    function ponermensaje() {
+        hola();
+        detectarmensajes();
+    };
+
+    //#*    [ EVENTOS ] */
+
+    adt.addEventListener('keyup', (event) => {
+        
+        let valortecla = event['key']
+
+        if (valortecla == 'Enter') {
+            ponermensaje();
+        };
+    })
+
+    enviar.addEventListener('click', function() {
+        ponermensaje();
+    });
+
+    openchat.addEventListener('click', function() {
+
+        mostraruocultar(chatwithbot, splashsounds, sparklessounds);
+    });
+
+    for (var i = 0; i < chatbotbuttons; i++) {
+
+        let object = chatbotbuttons.item(i)
+
+        object.addEventListener('click', function() {
+            hola()
+        })
     }
-}
 
-function ponermensaje() {
-    hola()
-    detectarmensajes()
-}
+    openchat.addEventListener('mouseover', function() {
+        document.querySelector('#selectmenu').play()
+    })
 
-//#*    [ EVENTOS ] */
-
-adt.addEventListener('keyup', (event) => {
-    
-    let valortecla = event['key']
-
-    if (valortecla == 'Enter') {
-        ponermensaje()
-    }
-})
-
-enviar.addEventListener('click', function() {
-    ponermensaje()
 })

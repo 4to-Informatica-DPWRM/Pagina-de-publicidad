@@ -1,3 +1,112 @@
+:root {
+    --poscenter: 49%;
+    --nonemenu: 26%;
+    --undynebodyleft: 34%;
+    --undynebodytop: 110%;
+    --mettatonbodytop: 160%; 
+    --mettatonbodyleft: 31%;
+}
+
 body {
     background-color: black;
+}
+
+img:not(header img) {
+    image-rendering: pixelated;
+}
+
+button {
+    background-color: black;
+    border: 3px orange solid;
+    font-size: 20px;
+    color: orange;
+    padding: 0;
+}
+
+#totalpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#infopage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*#*  [ PERSONAJES ] */
+
+.dialog {
+    resize: none;
+    display: none;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    border: 2px black solid;
+    border-radius: 5px;
+    animation: showdialog 0.6s;
+}
+
+/*_*    [ UNDYNE ] */
+
+#undyne {
+    left: var(--undynebodyleft);
+    top: var(--undynebodytop);
+}
+
+#undynehead {
+    left: calc(var(--undynebodyleft) - (0.19%));
+    top: calc(var(--undynebodytop) - (17%));
+}
+
+#undynetext {
+    left: calc(var(--undynebodyleft) - (24%));
+    top: calc(var(--undynebodytop) - (22%));
+}
+
+/*_*    [ METTATON ] */
+
+#mettaton {
+    top: var(--mettatonbodytop);
+    left: var(--mettatonbodyleft);
+}
+
+#mettatonarms {
+    top: calc(var(--mettatonbodytop) - (10%));
+    left: calc(var(--mettatonbodyleft) - (1.2%));
+}
+
+#mettatontext {
+    top: calc(var(--mettatonbodytop) - (17%));
+    left: calc(var(--mettatonbodyleft) - (30%));
+}
+
+/* PRUEBAS */
+
+.test {
+    z-index: -1;
+    border: 5px white solid;
+    width: 300px;
+    height: 300px;
+}
+
+#testimg {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+/*#*    [ ANIMACIONES ] */
+
+@keyframes showdialog {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
 }

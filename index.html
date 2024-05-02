@@ -5,63 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de publicidad</title>
     <link rel="stylesheet" href="styles/index.css">
+    <script src="scripts/index.js" defer></script>
+    <link rel="stylesheet" href="gen/CSS/extra_class.css">
     <link rel="stylesheet" href="gen/CSS/menu.css">
     <link rel="stylesheet" href="gen/CSS/fonts.css">
     <link rel="stylesheet" href="gen/CSS/chat.css">
     <link rel="stylesheet" href="gen/CSS/genchatbot.css">
-    <script src="gen/JS/menu.js" defer></script>
     <script src="gen/JS/chatbot.js" defer></script>
+    <script src="gen/JS/menu.js" defer></script>
 </head>
 <body>
+    <hr class="nonespace">
 
-    <section id="chatbot">
-        <div id="chat">
-            <img src="/assets/img/WARNING2.png" class="WARNING">
+    <section id="totalpage">
+
+        <hr class="nonespace100"> <hr class="nonespace25">
+
+        <div id="infopage">
+            <img src="assets/img/flowey/complete/spr_flowey_riseanim_8.png" alt="" id="flowey" class="scale4">
+
+            <hr class="nonespace50"> <hr class="nonespace">
+            <p>
+                Hola!<br>
+                Bienvenido a <span class="pagetitle">Dominican Offers</span>!<br>
+                La mejor pagina de ofertas de... <br>
+                <span class="redcolor">Republica</span> <span class="bluecolor">Dominicana</span>
+            </p>
+        </div>
+        
+        <hr class="nonespace50">
+
+        <h2>OFERTAS!</h2>
+        
+        <hr class="nonespace">
+
+        <div id="testimg">
+
+            <div>
+                <div class="test"><p style="text-align: center">400x400</p></div>
+
+                <div id="completeundyne">
+                    <textarea name="undynetextdialog" id="undynetext" class="dialog character" cols="30" rows="10" readonly>
+¡Hola! Soy Undyne, te presento todos los diferentes catálogos que tenemos, ¡para que puedas ver todo lo que hay actualmente!
+
+Escoge el que quieras y despues vuelve y dime que encontraste.
+                    </textarea>
+                    <img src="/assets/img/undyne/cita/faces/spr_adate_uface_0.png" alt="undynehead" id="undynehead" class="scale2s5 character">
+                    <img src="/assets/img/undyne/cita/spr_adate_ubody_0.png" alt="undyne" id="undyne" class="scale2s5 character">
+                </div>
+            </div>
+
+            <div>
+                <div class="test" style="text-align: center;"><p>400x400</p></div>
+
+                <div id="completemettaton">
+                    <textarea name="mettatontextdialog" id="mettatontext" class="dialog character" cols="30" rows="10" readonly>
+¡OFERTAS!
+
+¡OFERTAS POR TODOS LADOS! 
+
+¡TOMEN SUS OFERTAS!
+                    </textarea>
+
+                    <img src="assets/img/mettaton/complete/spr_mettatonb_0.png" alt="Mettaton" id="mettaton" class="scale3 character">
+                    <img src="assets/img/mettaton/complete/arms/spr_mettatonb_arms3_1.png" alt="Brazos_mettaton" id="mettatonarms" class="scale3 character">
+                </div>
+            </div>
+
+            <div>
+                <div class="test" style="text-align: center;"><p>400x400</p></div>
+            </div>
         </div>
 
-        <article class="chatbot" id="cuerpo">
-            <div class="text">
-            
-                <div id="agregar">
-            
-                </div>
-            
-            </div>
-            
-            <div id="botones">
-                <button type="button" id="1" class="botones" onclick="hola()">HOLA</button>
-                <button type="button" id="3" class="botones" onclick="hola()">COMO ESTAS</button>
-                <button type="button" id="4" class="botones" onclick="hola()">OSTIA</button>
-                <button type="button" id="2" class="botones" onclick="hola()">ADIOS</button>
-                <button type="button" id="5" onclick="clearElements()" class="clear">CLEAR</button>
-            </div>
-            
-            <div class="send-cont">
-                <div class="btn-container">
-                    <button class="send-button" id="send">
-                        <div class="svg-wrapper-1">
-                            <div class="svg-wrapper">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                    width="24"
-                                    height="24"
-                                >
-                                <path fill="none" d="M0 0h24v24H0z"></path>
-                                    <path
-                                    fill="currentColor"
-                                    d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                                    ></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <span>Send</span>
-                    </button>
-                </div>
-                <input maxlength="50" type="text" id="insertartexto"></input>
-            </div>
-            
-        </article>
     </section>
 </body>
 </html>

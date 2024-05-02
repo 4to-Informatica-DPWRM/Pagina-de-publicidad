@@ -13,11 +13,16 @@
     color: white;
 }
 
+.fontlog {
+    font-family: UDLog;
+}
+
 body {
-    margin: 0px 0px 0px 0px !important;
     padding: 0 0 0 0 !important;
+    margin: 0 0 0 0 !important;
 }
 
 p {
     font-size: 23px;
+    margin: 0;
 }
