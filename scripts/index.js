@@ -2,12 +2,6 @@
 
 const documentoindex = document.documentElement;
 const documentostyleindex = window.getComputedStyle(documentoindex);
-const completeundyne = document.getElementById('completeundyne');
-const completemettaton = document.getElementById('completemettaton');
-const armsmettaton = document.getElementById('mettatonarms')
-const completealphys = document.getElementById('completealphys');
-const alphysimage = document.getElementById('alphys');
-const dialogstext = document.querySelectorAll('.dialog');
 
 function mostraruocultar(objeto) {
         
@@ -19,28 +13,23 @@ function mostraruocultar(objeto) {
     };
 };
 
-completeundyne.addEventListener('mouseover', function() {
-    mostraruocultar(dialogstext[0])
-})
+document.querySelector('#botondeprueba').addEventListener('click', traerDatos());
 
-completeundyne.addEventListener('mouseout', function() {
-    mostraruocultar(dialogstext[0])
-})
+function traerDatos() {
+    console.log('funciona la funcion')
 
-completemettaton.addEventListener('mouseover', function() {
-    mostraruocultar(dialogstext[1])
-})
+    const xhttp = new XMLHttpRequest();
 
-completemettaton.addEventListener('mouseout', function() {
-    mostraruocultar(dialogstext[1])
-})
+    xhttp.open('GET', 'scripts/prueba.json', true);
 
-completealphys.addEventListener('mouseover', function() {
-    mostraruocultar(dialogstext[2])
-    alphysimage.src = '/assets/img/alphys/complete/spr_alphyshelper_shakehead_0.png';
-})
+    xhttp.send();
 
-completealphys.addEventListener('mouseout', function() {
-    mostraruocultar(dialogstext[2])
-    alphysimage.src = '/assets/img/alphys/complete/spr_alphyshelper_0.png';
-})
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText)
+
+            let datos = JSON.parse(this.responseText)
+            console.log(datos)
+        }
+    }
+}

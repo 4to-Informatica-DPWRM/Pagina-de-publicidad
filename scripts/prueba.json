@@ -1,0 +1,10 @@
+[
+    {
+        "hola" : "saludar",
+        "adios" : "despedir"
+    },
+    {
+        "hola" : "no",
+        "adios" : "si"
+    }
+]

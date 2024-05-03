@@ -51,9 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </header>
     
     <audio id="selectmenu" src="/assets/sounds/snd_select.wav"></audio>
-    <audio src="/assets/sounds/texts/SND_TXT1.wav"></audio>
-    <img src="/assets/img/flowey/map/spr_floweyshrink_8.png" alt="miniflowey" id="miniflowey" class="scale2s5 character">
-    <textarea name="minifloweytextdialog" id="minifloweytext" class="dialog character" cols="30" rows="10"></textarea>`;
+    <audio src="/assets/sounds/texts/SND_TXT1.wav"></audio>`;
 
     var Elemento = document.querySelector('header');
 
@@ -126,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             objectid = Number(String(event.target.id).substring(0, 1))
 
             opciones[objectid-1].style.display = 'block';
+            soundselect()
         });
 
         object.addEventListener('mouseout', function() {
@@ -150,33 +149,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         object.addEventListener('mouseover', function() {
             soundselect()
+            
         })
     }
 
     h1menu.addEventListener('mouseover', function() {
         soundselect()
-    })
-
-    window.addEventListener('scroll', function() {
-        actscrollY = window.scrollY
-    
-        if (actscrollY >= 380) {
-          floweymini.style.display = 'block';  
-        }
-        else {
-            floweymini.style.display = 'none';
-        }
-    })
-
-    floweymini.addEventListener('mouseover', function() {
-        
-        numran = Math.floor(Math.random() * ((floweyresponses.length - 1) - 0 + 1) + 0)
-        floweyminitext.value = floweyresponses[numran]
-        mostraruocultar(floweyminitext)
-    })
-
-    floweymini.addEventListener('mouseout', function() {
-        
-        mostraruocultar(floweyminitext)
     })
 })
