@@ -16,27 +16,142 @@ body{
     flex-wrap: wrap;
 }
 
+/*sobre nosotros*/
+.sec {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.uno {
+    background: url(https://metodoegm.com/wp-content/uploads/2023/03/grandes-empresas-que-fracasaron-por-que.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 250px;
+}
+
+.sesgouno {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 15vh 0 0 100vw;
+    border-style: solid;
+    border-color: transparent transparent transparent transparent;
+} 
+
+
+
+.texto {
+    text-align: center;
+    color: rgb(245, 241, 241);
+    margin: 150px 0;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.texto p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.texto{
+    position: absolute;
+    top: 50%; /* Lo posicionamos en la mitad superior del contenedor */
+    left: 50%; /* Lo posicionamos en la mitad izquierda del contenedor */
+    transform: translate(-50%, -50%); /* Lo movemos hacia arriba y a la izquierda la mitad de su propio tamaño */
+    text-align: center; /* Centramos el texto */
+    z-index: 1; /* Asegura que esté encima de la imagen */
+}
+
+.sesgodos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 15vh 100vw 0 0;
+    border-style: solid;
+    border-color: transparent transparent transparent transparent;  
+}
+
+.info {
+    position: absolute;
+    top: calc(100% + 20px); /* Coloca el elemento debajo de .uno con un margen superior */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 70%;
+    margin-top: 80px; /* Ajusta el margen superior */
+    margin-bottom: 1000px; /* Ajusta el margen inferior */
+    }
+
+
+.info p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 80px; /* Ajusta el margen superior del párrafo */
+    margin-bottom: 20px;
+}
+
+
+.info h1{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 20px; /* Ajusta el margen superior del párrafo */ 
+}
+/*fin sobre nosotros*/
+
+/* Estilos para el contenedor de la tarjeta */
+/* Estilos para el contenedor de la tarjeta */
 .flip-card{
     margin: 20px;
     position: relative;
-    transform-style: preserve-3d;
+    transform-style: preserve-3d; /*efecto 3d*/
     perspective: 1000px;
+    margin-top: 300px;
+    margin-bottom: 20px;
 }
 
+
+.flip-card-2{
+    margin: 20px;
+    position: relative;
+    transform-style: preserve-3d; /*efecto 3d*/
+    perspective: 1000px;
+    margin-top: 300px;
+}
+
+.flip-card-3{
+    margin: 20px;
+    position: relative;
+    transform-style: preserve-3d; /*efecto 3d*/
+    perspective: 1000px;
+    margin-top: 300px;
+}
+
+/* Estilos para la cara frontal de la tarjeta */
 .flip-card-front{
     width: 380px;
     min-height: 600px;
     height: auto;
     background-color: rgb(6, 6, 6);
-    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+    background-image: url(https://i.pinimg.com/564x/d4/65/dc/d465dc8bb4db7e4029293a24d579a8aa.jpg);
     background-size: cover;
     background-position: center;  
     text-align: center;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transition: transform 2.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    backface-visibility: hidden; /*oculta la parte de atras de la tarjeta*/
+    transform-style: preserve-3d; /*efecto 3d*/
+    transition: transform 2.8s cubic-bezier(0.4, 0.2, 0.2, 1); /*transicion*/
 }
 
+/* estilo de la parte de atras de la tarjeta*/
 .flip-card-back{
   width: 380px;
   min-height: 600px;
@@ -47,27 +162,28 @@ body{
   background-size: cover;
   background-position: center;  
   text-align: center;
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* oculta la parte de alante*/
   transform-style: preserve-3d;
   transition: transform 2.8s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
 
-
-.flip-card:nth-of-type(2) .flip-card-front{
-    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+/*estilo de la segunda tarjeta*/
+.flip-card-2 .flip-card-front{
+    background-image: url(https://i.pinimg.com/564x/e8/fd/f5/e8fdf52c90dcd2351575779d6d42a9b9.jpg);/*imagen de fondo alante*/
 }
 
-.flip-card:nth-of-type(2) .flip-card-back{
-    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);
+.flip-card-2 .flip-card-back{
+    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);/*imagen de fondo de atras*/
 }
 
-.flip-card:nth-of-type(3) .flip-card-front{
-    background-image: url(https://www.mbaonline.es/images/easyblog_articles/7/b2ap3_large_vision-mision-valores-empresa.jpg);
+/*estilo de la tercera tarjeta*/
+.flip-card-3 .flip-card-front{
+    background-image: url(https://i.pinimg.com/564x/93/79/56/937956efaa798cf18ff2b43dd31ad69c.jpg);/* imagen de fondo alante*/
 }
 
-.flip-card:nth-of-type(3) .flip-card-back{
-    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);
+.flip-card-3 .flip-card-back{
+    background-image: url(https://st4.depositphotos.com/11634452/23124/i/450/depositphotos_231243976-stock-photo-paper-texture-white-watercolor-paper.jpg);/*imagen de fondo de atras*/
 }
 
 .flip-card-front{
@@ -92,7 +208,7 @@ body{
     left: 0;
     opacity: 0.6;
 }
-
+/* contenido dentro de la tarjeta*/
 .flip-card-front .inner,
 .flip-card-back .inner{
     width: 100%;
@@ -124,13 +240,29 @@ body{
     line-height: 28px;
 }
 
-
+/*efecto para voltear la tarjeta a pasar el mouse*/
 .flip-card:hover .flip-card-front{
-    transform: rotateY(-180deg);
+    transform: rotateY(-180deg);/*voltea hacia atras*/
 }
 
 .flip-card:hover .flip-card-back{
-    transform: rotateY(0deg)
+    transform: rotateY(0deg);/*voltea hacia alante*/
+}
+
+.flip-card-2:hover .flip-card-front{
+    transform: rotateY(-180deg);/*voltea hacia atras*/
+}
+
+.flip-card-2:hover .flip-card-back{
+    transform: rotateY(0deg)/*voltea hacia alante*/
+}
+
+.flip-card-3:hover .flip-card-front{
+    transform: rotateY(-180deg)/*voltea hacia atras*/
+}
+
+.flip-card-3:hover .flip-card-back{
+    transform: rotateY(0deg)/*voltea hacia alante*/
 }
 
 
