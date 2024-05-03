@@ -5,6 +5,8 @@ const documentostyle = window.getComputedStyle(documento);
 var numran
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    //#region MENU
     const menu = `<header>
 
         <a href="/index.html">
@@ -16,14 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <button id="actmenu">Menu</button>
         <div id="menu">
-            <div class="seccion">
-                <a href="/index.html"><p class="menuopts" id="1m">Inicio</p></a>
-                <div id="optinicio" class="opciones">
-                    <p>Misión</p>
-                    <p>Visión</p>
-                    <a href="/HTML/Nosotros.html"><p>Valores</p></a>
-                </div>
-            </div>
+
+            <a href="/index.html"><p class="menuopts" id="1m">Inicio</p></a>
+
             <div class="seccion">
                 <a href="/HTML/Supermerc.html"><p class="menuopts" id="2m">Supermercados</p></a>
                 <div id="optsuper" class="opciones">
@@ -37,21 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="seccion">
                 <p class="menuopts" id="3m">Farmacias</p>
                 <div id="optfarm" class="opciones">
-                    <a target="_black" href="https://farmaciasloshidalgos.com.do"><p>Los Hidalgos</p></a>
-                    <a target="_black" href="https://www.farmaciacarol.com"><p>Farmacia Carol</p></a>
-                    <a target="_black" href="https://farmaciamedicargbc.com/contactenos/?gclid=CjwKCAjwrcKxBhBMEiwAIVF8rJKjNy1VP61rP2eg9DvCThm4AWVbdnGSSwaCU9i2y-tmjY-I6FJooRoCE24QAvD_BwE"><p>Farmacia GBC</p></a>
-                    <a target="_black" href="https://www.instagram.com/farmamaxve/?hl=es"><p>Farmanax</p></a>
+                    <a target="_blank" href="https://farmaciasloshidalgos.com.do"><p>Los Hidalgos</p></a>
+                    <a target="_blank" href="https://www.farmaciacarol.com"><p>Farmacia Carol</p></a>
+                    <a target="_blank" href="https://farmaciamedicargbc.com/contactenos/?gclid=CjwKCAjwrcKxBhBMEiwAIVF8rJKjNy1VP61rP2eg9DvCThm4AWVbdnGSSwaCU9i2y-tmjY-I6FJooRoCE24QAvD_BwE"><p>Farmacia GBC</p></a>
+                    <a target="_blank" href="https://www.instagram.com/farmamaxve/?hl=es"><p>Farmanax</p></a>
                 </div>
             </div>
-            <a target="_black" href="https://www.conectate.com.do/loterias/"><p class="menuopts" id="4m">Loteria</p></a>
-            <a target="_black" href="/HTML/Cines.html"><p class="menuopts" id="5m">Cine</p></a>
-            <a target="_black" href="/HTML/ofertas.html"><p class="menuopts" id="6m">Ofertas</p></a>
-            <p class="menuopts" id="7m">Nosotros</p>
+            <a href="/HTML/Loteria.html"><p class="menuopts" id="4m">Loteria</p></a>
+            <a target="_blank" href="/HTML/Cines.html"><p class="menuopts" id="5m">Cine</p></a>
+            <a target="_blank" href="/HTML/ofertas.html"><p class="menuopts" id="6m">Ofertas</p></a>
+            <a href="/HTML/Nosotros.html"><p class="menuopts" id="7m">Nosotros</p></a>
         </div>
     </header>
     
-    <audio id="selectmenu" src="/assets/sounds/snd_select.wav"></audio>
-    <audio src="/assets/sounds/texts/SND_TXT1.wav"></audio>`;
+    <audio id="selectmenu" src="/assets/sounds/snd_select.wav"></audio>`;
 
     var Elemento = document.querySelector('header');
 
@@ -70,26 +66,24 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.insertAdjacentHTML('afterbegin', menu);
     }
 
+    //#region VARIABLES
+
     var objectid
     const allmenu = document.querySelector('#menu');
     const menuhead = document.querySelectorAll('.menuopts');
     const iniciooptions = document.getElementById('optinicio');
+    const menuseccion = document.querySelectorAll('.seccion')
     const opciones = document.querySelectorAll('.opciones');
+    const opcionesp = document.querySelectorAll('.opciones p');
     const botonformenu = document.querySelector('#actmenu');
     const selectsound = document.querySelector('#selectmenu');
     const pmenus = document.querySelectorAll('header p');
     const h1menu = document.querySelector('header h1');
-    const floweymini = document.getElementById('miniflowey');
-    const floweyresponses = [
-        'Hola, te voy a acompañar a todos lados!',
-        'Interesante, no?',
-        'Sabias que a la derecha esta mettaton? el robot ase- digo, el robot que te puede ayudar con tus dudas'
-    ]
-    const floweyminitext = document.getElementById('minifloweytext');
 
     selectsound.volume = 0.4;
 
     //#*              [ FUNCIONES ]
+    //#region FUNCIONES
 
     //? Mostrar u Ocultar el objeto insertado en el parametro
     function mostraruocultar(objeto) {
@@ -101,6 +95,8 @@ document.addEventListener('DOMContentLoaded', function() {
             objeto.style.display = 'block';
         };
     };
+
+    //#region EVENTOS
 
     //#*                [ EVENTOS ]
 
@@ -114,34 +110,21 @@ document.addEventListener('DOMContentLoaded', function() {
         selectsound.play()
     }
 
-    //? Añadir eventos a los 3 primeros objetos del menu, junto con sus opciones
-    for (var i = 0; i <= menuhead.length-5; i++) {
-
-        let object = menuhead.item(i);
-        let objectopt = opciones.item(i);
+    for (var i = 0; i <= 1; i++) {
+        
+        let object = menuseccion.item(i)
+        let objectid = i
 
         object.addEventListener('mouseover', function() {
-            objectid = Number(String(event.target.id).substring(0, 1))
 
-            opciones[objectid-1].style.display = 'block';
-            soundselect()
-        });
+            opciones[objectid].style.display = 'flex';
+        })
 
         object.addEventListener('mouseout', function() {
 
-            opciones[objectid-1].style.display = 'none';
-        });
-
-        //@? Es para evitar que las opciones se cierren cuando muevas el mouse del menu
-        objectopt.addEventListener('mouseover', function() {
-            
-            opciones[objectid-1].style.display = "block";
-        });
-
-        objectopt.addEventListener('mouseout', function() {
-            opciones[objectid-1].style.display = "none";
-        });
-    };
+            opciones[objectid].style.display = 'none';
+        })
+    }
 
     for (var i = 0; i <= pmenus.length-1; i++) {
 

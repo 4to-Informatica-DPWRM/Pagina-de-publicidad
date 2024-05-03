@@ -9,7 +9,6 @@ header {
     border-bottom: 2px white solid;
     user-select: none;
     background-color: black;
-    
 }
 
 header p:hover,
@@ -60,6 +59,8 @@ header h1 {
     padding: 0 4px 0 4px !important;
     top: 8.8%;
     background-color: black;
+    gap: 15px;
+    flex-direction: column;
 }
 
 .seccion {
@@ -69,34 +70,6 @@ header h1 {
 
 #actmenu {
     display: none;
-}
-
-#miniflowey {
-    display: none;
-    position: fixed ;
-    top: 95.5%;
-    left: 1%;
-    animation: upflowey 0.5s;
-}
-
-#minifloweytext {
-    display: none;
-    position: fixed;
-    width: 400px;
-    height: 50px;
-    top: 85%;
-    left: 1%;
-    overflow-y: hidden;
-    z-index: 1001;
-}
-
-@keyframes upflowey {
-    from {
-        top: 110%;
-    }
-    to {
-        top: 95.5%;
-    }
 }
 
 @media (max-width: 1140px) {

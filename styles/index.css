@@ -15,10 +15,6 @@ body {
     background-color: black;
 }
 
-img:not(header img) {
-    image-rendering: pixelated;
-}
-
 button {
     background-color: black;
     border: 3px orange solid;
@@ -68,7 +64,7 @@ button {
 
 .imgpags {
     display: flex;
-    gap: 200px
+    gap: 50px
 }
 
 .imgpags p {

@@ -80,3 +80,17 @@
 .greencolor {
     color: chartreuse;
 }
+
+/*#*    [ COLORES DE FONDO ] */
+
+.backblue {
+    background-color: blue;
+}
+
+.backred {
+    background-color: red;
+}
+
+.borderwhite {
+    border: 2px white solid;
+}

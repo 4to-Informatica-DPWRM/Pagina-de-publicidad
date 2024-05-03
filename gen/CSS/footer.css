@@ -1,6 +1,33 @@
 footer {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     border-top: 2px white solid;
+    text-align: center;
+}
+
+footer p:hover,
+footer a:hover {
+    color: yellow;
+}
+
+footer a:hover {
+    text-decoration: underline yellow;
+}
+
+#imgredes,
+#ubicacion,
+#extratext {
+    display: flex;
+    gap: 10px;
+}
+
+#ubicacion,
+#extratext {
+    flex-direction: column;
+}
+
+#imgredes:hover,
+#ubicacion:hover,
+#extratext:hover {
+    filter: hue-rotate(120deg);
 }
