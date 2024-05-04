@@ -1,3 +1,5 @@
+//? Este código es solo para aprender a usar archivos json, que es el que se llama "jsonausar.json"
+
 document.querySelector('#botondeprueba').addEventListener('click', traerDatos());
 
 function traerDatos() {

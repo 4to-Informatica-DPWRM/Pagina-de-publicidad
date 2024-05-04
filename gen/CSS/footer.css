@@ -3,6 +3,7 @@ footer {
     justify-content: space-around;
     border-top: 2px white solid;
     text-align: center;
+    background-color: black;
 }
 
 footer p:hover,

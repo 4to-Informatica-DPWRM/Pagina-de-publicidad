@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <a href="/HTML/Loteria.html"><p class="menuopts" id="4m">Loteria</p></a>
             <a target="_blank" href="/HTML/Cines.html"><p class="menuopts" id="5m">Cine</p></a>
-            <a target="_blank" href="/HTML/ofertas.html"><p class="menuopts" id="6m">Ofertas</p></a>
+            <a href="/HTML/ofertas.html"><p class="menuopts" id="6m">Ofertas</p></a>
             <a href="/HTML/Nosotros.html"><p class="menuopts" id="7m">Nosotros</p></a>
         </div>
     </header>

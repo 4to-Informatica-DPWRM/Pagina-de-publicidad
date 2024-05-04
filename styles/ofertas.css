@@ -1,0 +1,55 @@
+body {
+    background-color: black;
+}
+
+.ofertas{
+    text-align: center;
+}
+
+.todo{
+    padding: 10px 5%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 3fr));
+    gap: -80%;
+}
+
+.offer {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.offer:hover {
+    transform: translateY(-5px);
+}
+
+.offer-img {
+    max-width: 100%; /* Establece el ancho máximo */
+    max-height: 200px; /* Establece la altura máxima */
+    width: auto; /* Permite que el ancho se ajuste automáticamente */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+}
+
+.offer-details {
+    padding: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
