@@ -91,6 +91,13 @@
     background-color: red;
 }
 
+.backorange {
+    background-color: orange;
+}
+
+/*#*    [ COLORES DE BORDE ] */
+
 .borderwhite {
     border: 2px white solid;
 }
+
