@@ -1,3 +1,51 @@
 body {
     background-color: black;
 }
+
+#allcats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.seccat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: 2px white solid;
+    padding: 20px;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.seccat:first-child {
+    margin-top: 50px;
+}
+
+.seccat:last-child {
+    margin-bottom: 50px;
+}
+
+.cattitle {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    background-color: black;
+    border: 3px orange solid;
+    font-size: 20px;
+    color: orange;
+    padding: 0;
+}
+
+iframe {
+    display: none;
+    z-index: 100000;
+    background-color: gray;
+    border-radius: 10px;
+}

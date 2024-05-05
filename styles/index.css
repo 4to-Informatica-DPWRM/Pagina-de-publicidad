@@ -1,16 +1,3 @@
-:root {
-    --poscenter: 49%;
-    --nonemenu: 26%;
-    --ordercharactersleft: 34%;
-    --ordercharacterstop: 110%;
-    --undynebodytop: var(--ordercharacterstop);
-    --undynebodyleft: var(--ordercharactersleft);
-    --mettatonbodytop: calc(var(--ordercharacterstop) + (50%)); 
-    --mettatonbodyleft: calc(var(--ordercharactersleft) - (3%));
-    --alphysbodyleft: calc(var(--ordercharactersleft) - (4%));
-    --alphysbodytop: calc(var(--ordercharacterstop) + (113%));
-}
-
 body {
     background-color: black;
 }
@@ -71,15 +58,4 @@ button {
     align-self: center;
     text-align: center;
     justify-content: center;
-}
-
-/*#*    [ ANIMACIONES ] */
-
-@keyframes showdialog {
-    from {
-        scale: 0;
-    }
-    to {
-        scale: 1;
-    }
 }

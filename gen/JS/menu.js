@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="seccion">
                 <a href="/HTML/Supermerc.html"><p class="menuopts" id="2m">Supermercados</p></a>
                 <div id="optsuper" class="opciones">
-                    <p>Aprezio</p>
+                    <p>Carrefour</p>
                     <p>Bravo</p>
                     <p>Sirena</p>
                     <p>Supermix</p>

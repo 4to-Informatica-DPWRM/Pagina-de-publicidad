@@ -9,10 +9,10 @@ const footercode = `<footer>
     <h2>Redes sociales</h2>
     
     <div id="imgredes">
-        <a target="_blank" href="https://facebook.com"><img src="/assets/img/Facebook Logo2.png" alt="Facebook"></a>
-        <a target="_blank" href="https://twitter.com"><img src="/assets/img/Twitter Logo.png" alt="Twitter"></a>
-        <a target="_blank" href="https://instagram.com"><img src="/assets/img/Instagram Logo.png" alt="Instagram"></a>
-        <a target="_blank" href="https://linkedin.com"><img src="/assets/img/Linkedin Logo2.png" alt="Linkedin"></a>
+        <a target="_blank" href="https://facebook.com"><img src="/assets/img/Logos/Facebook Logo2.png" alt="Facebook"></a>
+        <a target="_blank" href="https://twitter.com"><img src="/assets/img/Logos/Twitter Logo.png" alt="Twitter"></a>
+        <a target="_blank" href="https://instagram.com"><img src="/assets/img/Logos/Instagram Logo.png" alt="Instagram"></a>
+        <a target="_blank" href="https://linkedin.com"><img src="/assets/img/Logos/Linkedin Logo2.png" alt="Linkedin"></a>
     </div>
 </div>
 

@@ -26,16 +26,17 @@ header a {
     text-decoration: none;
 }
 
+header h1 {
+    align-self: center;
+}
+
 .logo {
     width: 100px;
 }
 
 #logoempress {
     display: flex;
-}
-
-header h1 {
-    align-self: center;
+    gap: 15px;
 }
 
 #menu {

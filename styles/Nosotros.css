@@ -1,6 +1,9 @@
 body {
+    background-color: black;
+}
+
+.cards {
     min-height: 100vh;
-    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +94,6 @@ body {
 .flip-card-front .inner,
 .flip-card-back .inner{
     width: 100%;
-    padding: 40px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%) translateZ(60px) scale(0.94);
@@ -115,7 +117,7 @@ body {
 
 .inner p{
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 28px;
 }
 
