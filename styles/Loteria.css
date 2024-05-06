@@ -8,6 +8,11 @@ body {
     align-items: center;
 }
 
+#Loterias img {
+    padding: 0;
+    height: 30px;
+}
+
 .allseclot h2 {
     text-align: center;
     width: 25%;

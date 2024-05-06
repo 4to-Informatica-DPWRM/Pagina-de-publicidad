@@ -9,6 +9,10 @@ body {
     gap: 20px;
 }
 
+#allcats p {
+    text-align: center;
+}
+
 .seccat {
     display: flex;
     flex-direction: column;

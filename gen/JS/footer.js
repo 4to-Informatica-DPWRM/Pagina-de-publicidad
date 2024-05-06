@@ -5,6 +5,8 @@ const documentostylefoot = window.getComputedStyle(documentofoot);
 
 const footercode = `<footer>
 
+<img src="/assets/img/valores.webp" alt="hola" height="100" width="200" id="logofooter">
+
 <div id="redes">
     <h2>Redes sociales</h2>
     

@@ -1,7 +1,6 @@
 body {
     background-color: black;
 }
-
 .ofertas{
     text-align: center;
 }
@@ -52,4 +51,12 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+del {
+    color: red;
+}
+
+h3 {
+    color: cyan;
 }

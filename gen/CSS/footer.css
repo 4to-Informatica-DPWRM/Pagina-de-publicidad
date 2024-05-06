@@ -4,6 +4,11 @@ footer {
     border-top: 2px white solid;
     text-align: center;
     background-color: black;
+    margin-bottom: 100px;
+}
+
+footer #logofooter {
+    margin-top: 20px;
 }
 
 footer p:hover,

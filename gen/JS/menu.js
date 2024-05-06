@@ -2,7 +2,47 @@
 
 const documento = document.documentElement;
 const documentostyle = window.getComputedStyle(documento);
+const tododocumento = document.querySelector('body');
+var fuente = documentostyle.getPropertyValue("--fuente")
 var numran
+var teclas = []
+
+function resetteclas() {
+    let maxteclas = teclas.length
+
+    for (i = 0; i <= maxteclas; i++) {
+        teclas.pop(0)
+    }
+}
+
+window.addEventListener('keydown', function(tecla) {
+
+    teclas.push(tecla["key"])
+
+    if (tecla["key"] == 'r') {
+        resetteclas()
+    }
+    else if (teclas.length % 10 == 0) {
+        if ((teclas[0] == 'a') & (teclas[1] == 'b') & (teclas[2] == 'ArrowRight') & (teclas[3] == 'ArrowLeft') & (teclas[4] == 'ArrowRight') & (teclas[5] == 'ArrowLeft') & (teclas[6] == 'ArrowDown') & (teclas[7] == 'ArrowDown') & (teclas[8] == 'ArrowUp') & (teclas[9] == 'ArrowUp')) {
+            
+            console.log('imanok ogidoc le se iS')
+
+            documento.style.setProperty("--fuente", 'Determination');
+            
+        }
+        else if ((teclas[0] == 'ArrowUp') & (teclas[1] == 'ArrowUp') & (teclas[2] == 'ArrowDown') & (teclas[3] == 'ArrowDown') & (teclas[4] == 'ArrowLeft') & (teclas[5] == 'ArrowRight') & (teclas[6] == 'ArrowLeft') & (teclas[7] == 'ArrowRight') & (teclas[8] == 'b') & (teclas[9] == 'a')) {
+
+            console.log('Si es el codigo konami')
+
+            documento.style.setProperty("--fuente", "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif");
+        }
+        else {
+            console.log('Codigo equivocado')
+        }
+
+        resetteclas()
+    }
+})
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -24,11 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="seccion">
                 <a href="/HTML/Supermerc.html"><p class="menuopts" id="2m">Supermercados</p></a>
                 <div id="optsuper" class="opciones">
-                    <p>Carrefour</p>
-                    <p>Bravo</p>
-                    <p>Sirena</p>
-                    <p>Supermix</p>
-                    <p>Super mercado nacional</p>
+                    <a href="/HTML/Supermerc.html#carrefourcat"><p>Carrefour</p></a>
+                    <a href="/HTML/Supermerc.html#bravocat"><p>Bravo</p></a>
+                    <a href="/HTML/Supermerc.html#sirenacat"><p>Sirena</p></a>
+                    <a href="/HTML/Supermerc.html#supermixcat"><p>Supermix</p></a>
+                    <a href="/HTML/Supermerc.html#supernacional"><p>Super mercado nacional</p></a>
                 </div>
             </div>
             <div class="seccion">
