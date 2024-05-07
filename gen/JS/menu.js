@@ -51,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         <a href="/index.html">
             <div id="logoempress">
-                <img src="/assets/img/valores.webp" alt="Logo" class="logo">
-                <h1>Dominican Offers</h1>
+                <img src="/assets/img/world of Offers2.png" alt="Logo" class="logo">
             </div>
         </a>
 
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="/HTML/Supermerc.html#carrefourcat"><p>Carrefour</p></a>
                     <a href="/HTML/Supermerc.html#bravocat"><p>Bravo</p></a>
                     <a href="/HTML/Supermerc.html#sirenacat"><p>Sirena</p></a>
-                    <a href="/HTML/Supermerc.html#supermixcat"><p>Supermix</p></a>
+                    <a href="/HTML/Supermerc.html#supermixcat"><p>Jumbo</p></a>
                     <a href="/HTML/Supermerc.html#supernacional"><p>Super mercado nacional</p></a>
                 </div>
             </div>
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             <a href="/HTML/Loteria.html"><p class="menuopts" id="4m">Loteria</p></a>
-            <a target="_blank" href="/HTML/Cines.html"><p class="menuopts" id="5m">Cine</p></a>
+            <a href="/HTML/Cines.html"><p class="menuopts" id="5m">Cine</p></a>
             <a href="/HTML/ofertas.html"><p class="menuopts" id="6m">Ofertas</p></a>
             <a href="/HTML/Nosotros.html"><p class="menuopts" id="7m">Nosotros</p></a>
         </div>
@@ -118,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const botonformenu = document.querySelector('#actmenu');
     const selectsound = document.querySelector('#selectmenu');
     const pmenus = document.querySelectorAll('header p');
-    const h1menu = document.querySelector('header h1');
 
     selectsound.volume = 0.4;
 
@@ -175,8 +173,4 @@ document.addEventListener('DOMContentLoaded', function() {
             
         })
     }
-
-    h1menu.addEventListener('mouseover', function() {
-        soundselect()
-    })
 })

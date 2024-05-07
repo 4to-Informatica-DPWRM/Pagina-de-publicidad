@@ -13,7 +13,7 @@ header {
 
 header p:hover,
 header h1:hover {
-    color: yellow;
+    color: cyan;
     cursor: pointer;
 }
 
@@ -31,7 +31,7 @@ header h1 {
 }
 
 .logo {
-    width: 100px;
+    width: 350px;
 }
 
 #logoempress {
@@ -49,7 +49,7 @@ header h1 {
 
 .menuopts {
     width: max-content;
-    height: 15px;
+    height: 28px;
 }
 
 .opciones {
@@ -57,7 +57,7 @@ header h1 {
     position: absolute;
     border: 2px white solid;
     border-radius: 5%;
-    padding: 0 4px 0 4px !important;
+    padding: 8px 8px 8px 8px !important;
     top: 8.8%;
     background-color: black;
     gap: 15px;

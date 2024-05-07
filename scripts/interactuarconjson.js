@@ -7,7 +7,7 @@ function traerDatos() {
 
     const xhttp = new XMLHttpRequest();
 
-    xhttp.open('GET', 'scripts/prueba.json', true);
+    xhttp.open('GET', 'scripts/jsonausar.json', true);
 
     xhttp.send();
 

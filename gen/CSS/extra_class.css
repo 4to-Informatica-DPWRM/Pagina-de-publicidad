@@ -63,6 +63,14 @@
     justify-content: center;
 }
 
+.wrongtext {
+    text-decoration: line-through;
+}
+
+.spantitle {
+    font-weight: bold;
+}
+
 /*#*    [ COLORES DE TEXTO ] */
 
 .yellowcolor {

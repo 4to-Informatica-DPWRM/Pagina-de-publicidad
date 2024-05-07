@@ -1,11 +1,9 @@
 [
     {
-        "hola" : "saludar",
-        "adios" : "despedir",
-        "comment" : "Este json es solo para aprender a interactuar con el"
-    },
-    {
-        "hola" : "no",
-        "adios" : "si"
+        "titulo" : "Kung Fu Panda 4",
+        "genero" : "Animación / Acción / Aventura",
+        "comienzo" : "Marzo 14, 2024",
+        "director" : "Joel Crawford",
+        "en" : "Caribbean Cinemas"
     }
 ]

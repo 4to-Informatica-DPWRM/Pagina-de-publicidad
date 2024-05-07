@@ -11,13 +11,13 @@ footer #logofooter {
     margin-top: 20px;
 }
 
-footer p:hover,
+footer p:hover:not(#logocopy p),
 footer a:hover {
-    color: yellow;
+    color: cyan;
 }
 
 footer a:hover {
-    text-decoration: underline yellow;
+    text-decoration: underline cyan;
 }
 
 #imgredes,
@@ -32,8 +32,10 @@ footer a:hover {
     flex-direction: column;
 }
 
-#imgredes:hover,
-#ubicacion:hover,
-#extratext:hover {
-    filter: hue-rotate(120deg);
+#logocopy p {
+    font-size: 10px;
+}
+
+footer p {
+    font-size: 16px;
 }

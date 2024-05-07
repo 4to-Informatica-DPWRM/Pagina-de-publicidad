@@ -5,7 +5,13 @@ const documentostylefoot = window.getComputedStyle(documentofoot);
 
 const footercode = `<footer>
 
-<img src="/assets/img/valores.webp" alt="hola" height="100" width="200" id="logofooter">
+<div id="logocopy">
+    <a href="/index.html"><img src="/assets/img/world of Offers2.png" alt="hola" height="100" width="350" id="logofooter"></a>
+    <p>
+        © 2024 World Of Offers.
+        Todos los derechos reservados.
+    </p>
+</div>
 
 <div id="redes">
     <h2>Redes sociales</h2>
@@ -29,13 +35,13 @@ const footercode = `<footer>
 </div>
 
 <div id="Extra">
-    <h2>Extra</h2>
+    <h2>Legales</h2>
 
     <div id="extratext">
-        <p>Texto de decoracion</p>
-        <p>Texto de decoracion</p>
-        <p>Texto de decoracion</p>
-        <p>Texto de decoracion</p>
+        <p>Política de Cookies</p>
+        <p>Política de Privacidad</p>
+        <p>Política de Marca</p>
+        <p>Términos y Condiciones</p>
     </div>
 </div>
 </footer>`
