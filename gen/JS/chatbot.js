@@ -38,11 +38,8 @@ const finuser = ` < <i class="fa-regular fa-circle-user user-icon"></i></p></div
 
 const holaswitch = [
     bot + 'Hola' + finbot,
-    bot + "Holi" + finbot,
     bot + 'Hola, como te va?' + finbot,
-    bot + 'Hola, estas bien?' + finbot,
-    bot + 'ola' + finbot,
-    bot + 'Hola~~' + finbot
+    bot + 'Hola, estas bien?' + finbot
 ]
 
 const adiosswitch = [
@@ -348,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let object = chatbotbuttons.item(i)
 
         object.addEventListener('click', function() {
-            hola()
+            hola(event.target.id)
         })
     }
 
